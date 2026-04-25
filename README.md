@@ -23,6 +23,10 @@ Core pipeline:
 - `routes/`, `views/`, `public/`, `config/`, `bin/`: web/service runtime components.
 - `index.js`: service entry.
 
+## Compatibility Note
+
+The `messenger` module was last system-tested in June 2023. Due to subsequent platform, cloud API, and device firmware/version changes, real integration behavior is not guaranteed to run without additional adaptation.
+
 ## Reproduction
 
 1. Install dependencies:
