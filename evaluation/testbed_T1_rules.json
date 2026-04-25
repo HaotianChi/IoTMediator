@@ -1,0 +1,446 @@
+{
+  "testbed": "T1",
+  "source": "Testbed rule set",
+  "rules": [
+    {
+      "rule_id": "T1_R1",
+      "platform": "SmartThings",
+      "trigger": [
+        {
+          "uid": "K6WtbvvYGZ",
+          "attr": "motion",
+          "op": "==",
+          "val": "active"
+        }
+      ],
+      "condition": [
+        {
+          "uid": "i3IlRhn3NQ",
+          "attr": "luminance",
+          "op": "<",
+          "val": 15
+        }
+      ],
+      "action": [
+        {
+          "uid": "fmQ5IKecnk",
+          "cmd": "light.on"
+        },
+        {
+          "uid": "rL9qnXfn4Q",
+          "cmd": "light.on"
+        }
+      ],
+      "metadata": {
+        "rule_ref_id": 1,
+        "text": "When motion 3 is detected in living room, if luminance 17 is below 15 lux, turn on floor lamp 7 and ceiling lamp 8."
+      },
+      "room": [
+        "living_room"
+      ]
+    },
+    {
+      "rule_id": "T1_R2",
+      "platform": "SmartThings",
+      "trigger": [
+        {
+          "uid": "zY26hCEf5l",
+          "attr": "contact",
+          "op": "==",
+          "val": "open"
+        }
+      ],
+      "condition": [],
+      "action": [
+        {
+          "uid": "rL9qnXfn4Q",
+          "cmd": "light.on"
+        }
+      ],
+      "metadata": {
+        "rule_ref_id": 2,
+        "text": "When front door 13 is opened, turn on ceiling lamp 8."
+      },
+      "room": [
+        "kitchen"
+      ]
+    },
+    {
+      "rule_id": "T1_R3",
+      "platform": "IFTTT",
+      "trigger": [
+        {
+          "uid": "emlN3Ve9pT",
+          "attr": "motion",
+          "op": "==",
+          "val": "active"
+        }
+      ],
+      "condition": [],
+      "action": [
+        {
+          "uid": "Guw4N5oJXQ",
+          "cmd": "microwave.on"
+        },
+        {
+          "uid": "O6bonMvtLd",
+          "cmd": "heater.on"
+        }
+      ],
+      "metadata": {
+        "rule_ref_id": 3,
+        "text": "When motion 5 is detected in kitchen, turn on the outlets for microwave 11 and heater 12."
+      },
+      "room": [
+        "kitchen"
+      ]
+    },
+    {
+      "rule_id": "T1_R4",
+      "platform": "SmartThings",
+      "trigger": [
+        {
+          "uid": "emlN3Ve9pT",
+          "attr": "motion",
+          "op": "==",
+          "val": "active"
+        }
+      ],
+      "condition": [
+        {
+          "uid": "qDAyCNwwv3",
+          "attr": "temperature",
+          "op": ">",
+          "val": 72
+        }
+      ],
+      "action": [
+        {
+          "uid": "O6bonMvtLd",
+          "cmd": "heater.off"
+        }
+      ],
+      "metadata": {
+        "rule_ref_id": 4,
+        "text": "When motion 5 is detected in kitchen, if temperature 16 is above 72\u00b0F, turn off the heater outlet 12."
+      },
+      "room": [
+        "kitchen"
+      ]
+    },
+    {
+      "rule_id": "T1_R5",
+      "platform": "SmartThings",
+      "trigger": [
+        {
+          "uid": "mf63RRx18w",
+          "attr": "presence",
+          "op": "==",
+          "val": "present"
+        }
+      ],
+      "condition": [],
+      "action": [
+        {
+          "uid": "sGzSg1623l",
+          "cmd": "lock.unlock"
+        }
+      ],
+      "metadata": {
+        "rule_ref_id": 5,
+        "text": "When the user 1 arrives home, unlock the front door 14."
+      },
+      "room": [
+        "kitchen"
+      ]
+    },
+    {
+      "rule_id": "T1_R6",
+      "platform": "PhilipsHue",
+      "trigger": [
+        {
+          "type": "time",
+          "op": "==",
+          "val": "23:00"
+        }
+      ],
+      "condition": [],
+      "action": [
+        {
+          "uid": "CFQVvjHd9P",
+          "cmd": "light.off"
+        }
+      ],
+      "metadata": {
+        "rule_ref_id": 6,
+        "text": "When 11pm, turn off the kitchen lights 10."
+      },
+      "room": [
+        "kitchen"
+      ]
+    },
+    {
+      "rule_id": "T1_R7",
+      "platform": "PhilipsHue",
+      "trigger": [
+        {
+          "type": "time",
+          "op": "==",
+          "val": "23:00"
+        }
+      ],
+      "condition": [],
+      "action": [
+        {
+          "uid": "sGzSg1623l",
+          "cmd": "lock.lock"
+        },
+        {
+          "uid": "Guw4N5oJXQ",
+          "cmd": "microwave.off"
+        },
+        {
+          "uid": "O6bonMvtLd",
+          "cmd": "heater.off"
+        }
+      ],
+      "metadata": {
+        "rule_ref_id": 7,
+        "text": "When 11pm, lock the front door 14 and turn off the outlets 11 and 12."
+      },
+      "room": [
+        "kitchen"
+      ]
+    },
+    {
+      "rule_id": "T1_R8",
+      "platform": "SmartThings",
+      "trigger": [
+        {
+          "uid": "WW8ccuMdMr",
+          "attr": "power",
+          "op": ">",
+          "val": 1800
+        }
+      ],
+      "condition": [],
+      "action": [
+        {
+          "uid": "O6bonMvtLd",
+          "cmd": "heater.off"
+        }
+      ],
+      "metadata": {
+        "rule_ref_id": 8,
+        "text": "When the power 15 is higher than 1800W, turn off the heater outlet 12."
+      },
+      "room": [
+        "kitchen"
+      ]
+    },
+    {
+      "rule_id": "T1_R9",
+      "platform": "SmartThings",
+      "trigger": [
+        {
+          "uid": "nFMM5GvilB",
+          "attr": "motion",
+          "op": "==",
+          "val": "active"
+        }
+      ],
+      "condition": [
+        {
+          "uid": "GLOBAL",
+          "attr": "time",
+          "op": "between",
+          "val": [
+            "09:00",
+            "23:00"
+          ]
+        }
+      ],
+      "action": [
+        {
+          "uid": "HY0LOMyCVB",
+          "cmd": "light.on"
+        }
+      ],
+      "metadata": {
+        "rule_ref_id": 9,
+        "text": "When motion 2 is detected in bedroom, if the time is between 9am and 11pm, turn on the light 6."
+      },
+      "room": [
+        "bedroom"
+      ]
+    },
+    {
+      "rule_id": "T1_R10",
+      "platform": "Alexa",
+      "trigger": [
+        {
+          "uid": "nFMM5GvilB",
+          "attr": "motion",
+          "op": "==",
+          "val": "active"
+        }
+      ],
+      "condition": [],
+      "action": [
+        {
+          "uid": "HY0LOMyCVB",
+          "cmd": "light.on"
+        }
+      ],
+      "metadata": {
+        "rule_ref_id": 10,
+        "text": "When motion 2 is detected in bedroom, turn on the light 6."
+      },
+      "room": [
+        "bedroom"
+      ]
+    },
+    {
+      "rule_id": "T1_R11",
+      "platform": "Alexa",
+      "trigger": [
+        {
+          "type": "time",
+          "op": "==",
+          "val": "18:00"
+        }
+      ],
+      "condition": [
+        {
+          "uid": "GLOBAL",
+          "attr": "home_mode",
+          "op": "!=",
+          "val": "saving"
+        }
+      ],
+      "action": [
+        {
+          "uid": "O6bonMvtLd",
+          "cmd": "heater.on"
+        }
+      ],
+      "metadata": {
+        "rule_ref_id": 11,
+        "text": "When 6pm, if the home is not in saving mode, turn on the heater 12."
+      },
+      "room": [
+        "kitchen"
+      ]
+    },
+    {
+      "rule_id": "T1_R12",
+      "platform": "IFTTT",
+      "trigger": [
+        {
+          "uid": "qDAyCNwwv3",
+          "attr": "temperature",
+          "op": ">",
+          "val": 75
+        }
+      ],
+      "condition": [
+        {
+          "uid": "GLOBAL",
+          "attr": "home_mode",
+          "op": "==",
+          "val": "saving"
+        }
+      ],
+      "action": [
+        {
+          "uid": "NxCaAp7PuC",
+          "cmd": "window.on"
+        }
+      ],
+      "metadata": {
+        "rule_ref_id": 12,
+        "text": "When temperature 16 exceeds 75\u00b0F, if the home is in saving mode, turn on the window opener switch 19."
+      },
+      "room": [
+        "kitchen"
+      ]
+    },
+    {
+      "rule_id": "T1_R13",
+      "platform": "SmartThings",
+      "trigger": [
+        {
+          "uid": "peJhcvVGyw",
+          "attr": "oven",
+          "op": "==",
+          "val": "on"
+        }
+      ],
+      "condition": [],
+      "action": [
+        {
+          "uid": "GLOBAL",
+          "cmd": "mode.set",
+          "args": {
+            "mode": "party"
+          }
+        }
+      ],
+      "metadata": {
+        "rule_ref_id": 13,
+        "text": "When oven outlet 20 turns on, set the location mode to party mode."
+      },
+      "room": [
+        "living_room",
+        "kitchen"
+      ]
+    },
+    {
+      "rule_id": "T1_R14",
+      "platform": "SmartThings",
+      "trigger": [
+        {
+          "uid": "GLOBAL",
+          "attr": "home_mode",
+          "op": "==",
+          "val": "party"
+        }
+      ],
+      "condition": [],
+      "action": [
+        {
+          "uid": "sGzSg1623l",
+          "cmd": "lock.unlock"
+        },
+        {
+          "uid": "fmQ5IKecnk",
+          "cmd": "light.on"
+        },
+        {
+          "uid": "rL9qnXfn4Q",
+          "cmd": "light.on"
+        },
+        {
+          "uid": "O6MU75AQqU",
+          "cmd": "light.on"
+        },
+        {
+          "uid": "CFQVvjHd9P",
+          "cmd": "light.on"
+        },
+        {
+          "uid": "Guw4N5oJXQ",
+          "cmd": "microwave.on"
+        }
+      ],
+      "metadata": {
+        "rule_ref_id": 14,
+        "text": "When the location mode changes to party mode, unlock the door 14, and turn on lights 7, 8, 9, 10 and microwave outlet 11."
+      },
+      "room": [
+        "living_room",
+        "kitchen"
+      ]
+    }
+  ]
+}

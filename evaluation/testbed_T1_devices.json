@@ -1,0 +1,339 @@
+{
+  "testbed": "T1",
+  "source": "Testbed device set",
+  "devices": [
+    {
+      "system_id": "mf63RRx18w",
+      "device_ref_id": 1,
+      "device_type": "Presencesensor(smartphone)",
+      "connected_platforms": [
+        "SmartThings"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "kitchen"
+      ]
+    },
+    {
+      "system_id": "nFMM5GvilB",
+      "device_ref_id": 2,
+      "device_type": "PHmotionsensor",
+      "connected_platforms": [
+        "SmartThings",
+        "Alexa",
+        "IFTTT"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "bedroom"
+      ]
+    },
+    {
+      "system_id": "K6WtbvvYGZ",
+      "device_ref_id": 3,
+      "device_type": "PHmotionsensor",
+      "connected_platforms": [
+        "SmartThings",
+        "Alexa",
+        "IFTTT"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "living_room"
+      ]
+    },
+    {
+      "system_id": "emlN3Ve9pT",
+      "device_ref_id": 5,
+      "device_type": "PHmotionsensor",
+      "connected_platforms": [
+        "SmartThings",
+        "Alexa",
+        "IFTTT"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "kitchen"
+      ]
+    },
+    {
+      "system_id": "i3IlRhn3NQ",
+      "device_ref_id": 17,
+      "device_type": "PHmotionsensor",
+      "connected_platforms": [
+        "SmartThings",
+        "Alexa",
+        "IFTTT"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "living_room"
+      ]
+    },
+    {
+      "system_id": "JRjV29DUwJ",
+      "device_ref_id": 4,
+      "device_type": "PHmotionsensor",
+      "connected_platforms": [
+        "PhilipsHue"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "restroom"
+      ]
+    },
+    {
+      "system_id": "HY0LOMyCVB",
+      "device_ref_id": 6,
+      "device_type": "PhilipsHuebulb",
+      "connected_platforms": [
+        "PH",
+        "SmartThings",
+        "Alexa",
+        "IFTTT"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "light",
+      "supported_commands": [
+        "light.on",
+        "light.off"
+      ],
+      "room": [
+        "bedroom"
+      ]
+    },
+    {
+      "system_id": "fmQ5IKecnk",
+      "device_ref_id": 7,
+      "device_type": "PhilipsHuebulb",
+      "connected_platforms": [
+        "PH",
+        "SmartThings",
+        "Alexa",
+        "IFTTT"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "light",
+      "supported_commands": [
+        "light.on",
+        "light.off"
+      ],
+      "room": [
+        "living_room"
+      ]
+    },
+    {
+      "system_id": "O6MU75AQqU",
+      "device_ref_id": 9,
+      "device_type": "PhilipsHuebulb",
+      "connected_platforms": [
+        "PH",
+        "SmartThings",
+        "Alexa",
+        "IFTTT"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "light",
+      "supported_commands": [
+        "light.on",
+        "light.off"
+      ],
+      "room": [
+        "restroom"
+      ]
+    },
+    {
+      "system_id": "CFQVvjHd9P",
+      "device_ref_id": 10,
+      "device_type": "PhilipsHuebulb",
+      "connected_platforms": [
+        "PH",
+        "SmartThings",
+        "Alexa",
+        "IFTTT"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "light",
+      "supported_commands": [
+        "light.on",
+        "light.off"
+      ],
+      "room": [
+        "kitchen"
+      ]
+    },
+    {
+      "system_id": "rL9qnXfn4Q",
+      "device_ref_id": 8,
+      "device_type": "LIFXbulb",
+      "connected_platforms": [
+        "SmartThings",
+        "Alexa",
+        "IFTTT"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "light",
+      "supported_commands": [
+        "light.on",
+        "light.off"
+      ],
+      "room": [
+        "living_room"
+      ]
+    },
+    {
+      "system_id": "Guw4N5oJXQ",
+      "device_ref_id": 11,
+      "device_type": "Wemosmartplug",
+      "connected_platforms": [
+        "SmartThings",
+        "Alexa",
+        "IFTTT"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "kitchen"
+      ]
+    },
+    {
+      "system_id": "O6bonMvtLd",
+      "device_ref_id": 12,
+      "device_type": "Wemosmartplug",
+      "connected_platforms": [
+        "SmartThings",
+        "Alexa",
+        "IFTTT"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "kitchen"
+      ]
+    },
+    {
+      "system_id": "zY26hCEf5l",
+      "device_ref_id": 13,
+      "device_type": "STmultipurposesensor",
+      "connected_platforms": [
+        "SmartThings",
+        "Alexa",
+        "IFTTT"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "kitchen"
+      ]
+    },
+    {
+      "system_id": "sGzSg1623l",
+      "device_ref_id": 14,
+      "device_type": "Kwiksetdoorlock",
+      "connected_platforms": [
+        "SmartThings",
+        "Alexa"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "lock",
+      "supported_commands": [
+        "lock.lock",
+        "lock.unlock"
+      ],
+      "room": [
+        "kitchen"
+      ]
+    },
+    {
+      "system_id": "WW8ccuMdMr",
+      "device_ref_id": 15,
+      "device_type": "STpoweroutlet",
+      "connected_platforms": [
+        "SmartThings"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "kitchen"
+      ]
+    },
+    {
+      "system_id": "qDAyCNwwv3",
+      "device_ref_id": 16,
+      "device_type": "SmartThingsmotionsensor",
+      "connected_platforms": [
+        "SmartThings",
+        "Alexa",
+        "IFTTT"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "kitchen"
+      ]
+    },
+    {
+      "system_id": "jmBwbwoM8u",
+      "device_ref_id": 18,
+      "device_type": "AlexaEchoDot",
+      "connected_platforms": [
+        "Alexa"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "bedroom"
+      ]
+    },
+    {
+      "system_id": "NxCaAp7PuC",
+      "device_ref_id": 19,
+      "device_type": "STWiFiplug",
+      "connected_platforms": [
+        "SmartThings",
+        "Alexa",
+        "IFTTT"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "kitchen"
+      ]
+    },
+    {
+      "system_id": "peJhcvVGyw",
+      "device_ref_id": 20,
+      "device_type": "STWiFiplug",
+      "connected_platforms": [
+        "SmartThings",
+        "Alexa",
+        "IFTTT"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "kitchen"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title>Integration of IoTMediator with Amazon Alexa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+  <script src="/javascript/oauth.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+
+      <h3>Allow Amazon Alexa to access your IoTMediator devices?</h3>
+
+      <% if (errorMessage) { %>
+        <p class="errorMessage"><%= errorMessage %></p>
+      <% } %>
+
+      <form action="/alexa/oauth2/login-as">
+        <div class="form-group">
+          <label for="email">Email: </label>
+          <input type="email" class="form-control" name="email" id="email"/>
+        </div>
+        <div class="form-group">
+          <label for="password">Password: </label>
+          <input type="password" name="password" id="password" class="form-control"/>
+        </div>
+        <div class="form-group">
+          <label for="expires_in">Access token expiration: </label>
+          <select class="custom-select" name="expires_in" id="expires_in">
+            <option value="2538000">30 Days</option>
+            <option value="84600" selected>24 Hours</option>
+            <option value="3600">1 Hour</option>
+            <option value="300">5 minutes</option>
+            <option value="120">2 minutes</option>
+            <option value="60">1 minute</option>
+          </select>
+        </div>
+        <div class="form-group" id="oauth-buttons">
+          <input class="oauth btn btn-primary" type="submit" name="signin" value="Sign In & Authorize"/>
+          <input class="oauth btn btn-info" type="submit" name="cancel" value="Cancel"/>
+        </div>
+      </form>
+    </div>
+    <div class="col-lg-3"></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+      <p>
+        This integration application allows your Alexa account to access your devices connected to IoTMediator.
+        Alexa apps and devices will access your devices.
+      </p>
+      <p>
+        This application does not use your Alexa credentials for login. You can create an account with
+        any username and password. Passwords you enter here are encrypted with a salted hash before
+        storage, so that they aren't readable by anyone.
+      </p>
+    </div>
+    <div class="col-lg-3"></div>
+</div>
+</body>
+</html>

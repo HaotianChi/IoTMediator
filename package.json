@@ -1,0 +1,47 @@
+{
+  "name": "iotmediator",
+  "version": "0.0.1",
+  "description": "Multi-platform mediator implementation",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "sim:eval": "node evaluation/simulator/run-paper-eval.js"
+  },
+  "keywords": [
+    "IoTMediator"
+  ],
+  "author": "hector",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@okta/oidc-middleware": "^4.0.3",
+    "@okta/okta-sdk-nodejs": "^4.4.0",
+    "axios": "^0.21.1",
+    "body-parser": "^1.15.2",
+    "countries-and-timezones": "^2.0.5",
+    "crypto-js": "^3.1.9-1",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.13.4",
+    "express-session": "^1.17.1",
+    "http-errors": "^1.8.0",
+    "install": "^0.13.0",
+    "internet-available": "^1.0.0",
+    "kill-port": "^1.6.0",
+    "lifx-http-api": "^1.0.3",
+    "morgan": "^1.9.1",
+    "mosca": "^0.6.0",
+    "mqtt": "^4.1.0",
+    "node-fetch": "^2.6.0",
+    "node-hue-api": "^4.0.10",
+    "nodemon": "^2.0.2",
+    "pug": "^3.0.2",
+    "rand-token": "^0.4.0",
+    "randomstring": "^1.1.5",
+    "request": "^2.88.0",
+    "sqlite3": "^5.0.2",
+    "st-schema": "^1.4.0",
+    "string-format": "^2.0.0",
+    "underscore": "^1.9.2",
+    "uuid": "^8.2.0"
+  }
+}

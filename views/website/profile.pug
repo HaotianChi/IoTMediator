@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h2.text-center Profile
+
+    .main.container.clearfix
+        .row
+        .col-md-8.col-md-offset-2
+            h1.display-4
+            img.avatar.img-circle.hidden-xs-down(src='./images/default-avatar.png', alt='avatar')
+
+            h2.user-name #{user.profile.firstName} #{user.profile.lastName}

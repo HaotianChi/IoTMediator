@@ -1,0 +1,328 @@
+{
+  "testbed": "T2",
+  "source": "Testbed device set",
+  "devices": [
+    {
+      "system_id": "AS0D31nxF3",
+      "device_ref_id": 1,
+      "device_type": "PhilipsHuebulb",
+      "connected_platforms": [
+        "PH",
+        "SmartThings",
+        "openHAB"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "light",
+      "supported_commands": [
+        "light.on",
+        "light.off"
+      ],
+      "room": [
+        "living_room"
+      ]
+    },
+    {
+      "system_id": "swI5DYPiq8",
+      "device_ref_id": 2,
+      "device_type": "PhilipsHuebulb",
+      "connected_platforms": [
+        "PH",
+        "SmartThings",
+        "openHAB"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "light",
+      "supported_commands": [
+        "light.on",
+        "light.off"
+      ],
+      "room": [
+        "living_room"
+      ]
+    },
+    {
+      "system_id": "Zru1UH2dng",
+      "device_ref_id": 3,
+      "device_type": "PhilipsHuebulb",
+      "connected_platforms": [
+        "PH",
+        "SmartThings",
+        "openHAB"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "light",
+      "supported_commands": [
+        "light.on",
+        "light.off"
+      ],
+      "room": [
+        "living_room"
+      ]
+    },
+    {
+      "system_id": "opcjzLLOXn",
+      "device_ref_id": 4,
+      "device_type": "PhilipsHuebulb",
+      "connected_platforms": [
+        "PH",
+        "SmartThings",
+        "openHAB"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "light",
+      "supported_commands": [
+        "light.on",
+        "light.off"
+      ],
+      "room": [
+        "living_room"
+      ]
+    },
+    {
+      "system_id": "G5zWV6wVY4",
+      "device_ref_id": 5,
+      "device_type": "PhilipsHuebulb",
+      "connected_platforms": [
+        "PH",
+        "SmartThings",
+        "openHAB"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "light",
+      "supported_commands": [
+        "light.on",
+        "light.off"
+      ],
+      "room": [
+        "bedroom"
+      ]
+    },
+    {
+      "system_id": "BVAjC1i2pD",
+      "device_ref_id": 6,
+      "device_type": "PhilipsHuebulb",
+      "connected_platforms": [
+        "PH",
+        "SmartThings",
+        "openHAB"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "light",
+      "supported_commands": [
+        "light.on",
+        "light.off"
+      ],
+      "room": [
+        "bedroom"
+      ]
+    },
+    {
+      "system_id": "G2J6LkI2bO",
+      "device_ref_id": 7,
+      "device_type": "ThirdRealityswitch",
+      "connected_platforms": [
+        "SmartThings"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "restroom"
+      ]
+    },
+    {
+      "system_id": "y7PW2aJQUz",
+      "device_ref_id": 8,
+      "device_type": "PHmotionsensor",
+      "connected_platforms": [
+        "SmartThings",
+        "openHAB"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "living_room"
+      ]
+    },
+    {
+      "system_id": "bQy7e36wiJ",
+      "device_ref_id": 9,
+      "device_type": "PHmotionsensor",
+      "connected_platforms": [
+        "SmartThings",
+        "openHAB"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "kitchen"
+      ]
+    },
+    {
+      "system_id": "uJGVKjq0oy",
+      "device_ref_id": 10,
+      "device_type": "PHmotionsensor",
+      "connected_platforms": [
+        "SmartThings",
+        "openHAB"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "bedroom"
+      ]
+    },
+    {
+      "system_id": "eaKdEVtXZm",
+      "device_ref_id": 11,
+      "device_type": "PHmotionsensor",
+      "connected_platforms": [
+        "SmartThings",
+        "openHAB"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "restroom"
+      ]
+    },
+    {
+      "system_id": "RvCmNg3H0b",
+      "device_ref_id": 12,
+      "device_type": "PHmotionsensor",
+      "connected_platforms": [
+        "SmartThings",
+        "openHAB"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "bedroom"
+      ]
+    },
+    {
+      "system_id": "L3ono5b4Ps",
+      "device_ref_id": 13,
+      "device_type": "STpoweroutlet",
+      "connected_platforms": [
+        "SmartThings"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "kitchen"
+      ]
+    },
+    {
+      "system_id": "nSBHH1dVg3",
+      "device_ref_id": 14,
+      "device_type": "STpoweroutlet",
+      "connected_platforms": [
+        "SmartThings"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "kitchen"
+      ]
+    },
+    {
+      "system_id": "fVwCUIs9Fe",
+      "device_ref_id": 15,
+      "device_type": "STmultipurposesensor",
+      "connected_platforms": [
+        "SmartThings",
+        "openHAB"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "living_room"
+      ]
+    },
+    {
+      "system_id": "PyWb9y3nVU",
+      "device_ref_id": 16,
+      "device_type": "STWiFiplug",
+      "connected_platforms": [
+        "SmartThings"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "living_room"
+      ]
+    },
+    {
+      "system_id": "f4z8w5MdfH",
+      "device_ref_id": 17,
+      "device_type": "ArloEssentialcamera",
+      "connected_platforms": [
+        "SmartThings"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "camera",
+      "supported_commands": [
+        "camera.on",
+        "camera.off"
+      ],
+      "room": [
+        "living_room"
+      ]
+    },
+    {
+      "system_id": "n1fUh7cJNS",
+      "device_ref_id": 18,
+      "device_type": "ArloEssentialcamera",
+      "connected_platforms": [
+        "SmartThings"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "camera",
+      "supported_commands": [
+        "camera.on",
+        "camera.off"
+      ],
+      "room": [
+        "bedroom"
+      ]
+    },
+    {
+      "system_id": "HtehANPBnn",
+      "device_ref_id": 19,
+      "device_type": "Presencesensor(smartphone)",
+      "connected_platforms": [
+        "SmartThings"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "living_room"
+      ]
+    },
+    {
+      "system_id": "pDOadnApt5",
+      "device_ref_id": 20,
+      "device_type": "Presencesensor(smartphone)",
+      "connected_platforms": [
+        "SmartThings"
+      ],
+      "is_infrastructure": false,
+      "semantic_type": "sensor",
+      "supported_commands": [],
+      "room": [
+        "living_room"
+      ]
+    }
+  ]
+}

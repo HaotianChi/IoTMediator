@@ -1,0 +1,103 @@
+{
+  "groups": [
+    {
+      "id": "G1_T1_5_7",
+      "label": "T1 (5 & 7)",
+      "testbed": "T1",
+      "pattern": "CAI-PotentialRaceCondition",
+      "candidate_ids": [
+        "CAND_517ea5937d38"
+      ]
+    },
+    {
+      "id": "G2_T1_11_12",
+      "label": "T1 (11 & 12)",
+      "testbed": "T1",
+      "pattern": "CAI-ChainedExecution",
+      "candidate_ids": [
+        "CAND_95f51cd54acd"
+      ]
+    },
+    {
+      "id": "G3_T1_13_14",
+      "label": "T1 (13 & 14)",
+      "testbed": "T1",
+      "pattern": "CAI-ChainedExecution",
+      "candidate_ids": [
+        "CAND_aa15659af367"
+      ]
+    },
+    {
+      "id": "G4_T1_3_4",
+      "label": "T1 (3 & 4)",
+      "testbed": "T1",
+      "pattern": "CAI-RaceCondition",
+      "candidate_ids": [
+        "CAND_dcab26982d51"
+      ]
+    },
+    {
+      "id": "G5_T1_3_8",
+      "label": "T1 (3 & 8)",
+      "testbed": "T1",
+      "pattern": "CAI-ActionRevert",
+      "candidate_ids": [
+        "CAND_19b2465e348d"
+      ]
+    },
+    {
+      "id": "G6_T1_1_2",
+      "label": "T1 (1 & 2)",
+      "testbed": "T1",
+      "pattern": "CAI-ConditionDisabling",
+      "candidate_ids": [
+        "CAND_01b54c830557"
+      ]
+    },
+    {
+      "id": "G7_T1_9_10",
+      "label": "T1 (9 & 10)",
+      "testbed": "T1",
+      "pattern": "CAI-ConditionBypass",
+      "candidate_ids": [
+        "CAND_004f9d9c4487"
+      ]
+    },
+    {
+      "id": "G8_T2_sethome_5",
+      "label": "T2 (set home mode & 5)",
+      "testbed": "T2",
+      "pattern": "CMAI-ConditionDisabling",
+      "candidate_ids": [
+        "CAND_23b291b08f06"
+      ]
+    },
+    {
+      "id": "G9_T2_sethome_6",
+      "label": "T2 (set home mode & 6)",
+      "testbed": "T2",
+      "pattern": "CMAI-ConditionEnabling",
+      "candidate_ids": [
+        "CAND_731e9849d062"
+      ]
+    },
+    {
+      "id": "G10_T2_1_2",
+      "label": "T2 (1 & 2)",
+      "testbed": "T2",
+      "pattern": "CAI-ConditionDisabling",
+      "candidate_ids": [
+        "CAND_a3b0b85fa72d"
+      ]
+    },
+    {
+      "id": "G11_T2_3_4",
+      "label": "T2 (3 & 4)",
+      "testbed": "T2",
+      "pattern": "CAI-InfiniteLoop",
+      "candidate_ids": [
+        "CAND_8b1526384764"
+      ]
+    }
+  ]
+}

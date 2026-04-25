@@ -1,0 +1,224 @@
+{
+  "testbed": "T2",
+  "source": "Testbed rule set",
+  "rules": [
+    {
+      "rule_id": "T2_R1",
+      "platform": "SmartThings",
+      "trigger": [
+        {
+          "uid": "uJGVKjq0oy",
+          "attr": "motion",
+          "op": "==",
+          "val": "active"
+        }
+      ],
+      "condition": [
+        {
+          "uid": "RvCmNg3H0b",
+          "attr": "luminance",
+          "op": "<",
+          "val": 15
+        }
+      ],
+      "action": [
+        {
+          "uid": "G5zWV6wVY4",
+          "cmd": "light.on"
+        },
+        {
+          "uid": "BVAjC1i2pD",
+          "cmd": "light.on"
+        }
+      ],
+      "metadata": {
+        "rule_ref_id": 1,
+        "text": "When motion 10 is detected in living room, if luminance 12 is below 15 lux, turn on ceiling lamp 5 and floor lamp 6."
+      },
+      "room": [
+        "bedroom"
+      ]
+    },
+    {
+      "rule_id": "T2_R2",
+      "platform": "SmartThings",
+      "trigger": [
+        {
+          "uid": "uJGVKjq0oy",
+          "attr": "motion",
+          "op": "==",
+          "val": "active"
+        }
+      ],
+      "condition": [],
+      "action": [
+        {
+          "uid": "G5zWV6wVY4",
+          "cmd": "light.on"
+        }
+      ],
+      "metadata": {
+        "rule_ref_id": 2,
+        "text": "When motion 10 is detected in bedroom, turn on ceiling lamp 5."
+      },
+      "room": [
+        "bedroom"
+      ]
+    },
+    {
+      "rule_id": "T2_R3",
+      "platform": "SmartThings",
+      "trigger": [
+        {
+          "uid": "y7PW2aJQUz",
+          "attr": "luminance",
+          "op": "<",
+          "val": 10
+        }
+      ],
+      "condition": [
+        {
+          "uid": "HtehANPBnn",
+          "attr": "presence",
+          "op": "==",
+          "val": "present"
+        },
+        {
+          "uid": "pDOadnApt5",
+          "attr": "presence",
+          "op": "==",
+          "val": "present"
+        }
+      ],
+      "action": [
+        {
+          "uid": "AS0D31nxF3",
+          "cmd": "light.on"
+        },
+        {
+          "uid": "swI5DYPiq8",
+          "cmd": "light.on"
+        },
+        {
+          "uid": "Zru1UH2dng",
+          "cmd": "light.on"
+        }
+      ],
+      "metadata": {
+        "rule_ref_id": 3,
+        "text": "When luminance 8 falls below 10 lux in living room, if any user 18 or 19 is at home, turn on ceiling lights 1, 2, 3.",
+        "condition_logic": "OR"
+      },
+      "room": [
+        "living_room"
+      ]
+    },
+    {
+      "rule_id": "T2_R4",
+      "platform": "openHAB",
+      "trigger": [
+        {
+          "uid": "y7PW2aJQUz",
+          "attr": "luminance",
+          "op": ">",
+          "val": 30
+        }
+      ],
+      "condition": [
+        {
+          "uid": "y7PW2aJQUz",
+          "attr": "motion",
+          "op": "==",
+          "val": "inactive"
+        }
+      ],
+      "action": [
+        {
+          "uid": "AS0D31nxF3",
+          "cmd": "light.off"
+        },
+        {
+          "uid": "swI5DYPiq8",
+          "cmd": "light.off"
+        },
+        {
+          "uid": "Zru1UH2dng",
+          "cmd": "light.off"
+        }
+      ],
+      "metadata": {
+        "rule_ref_id": 4,
+        "text": "When luminance 8 exceeds 30 lux in living room, if motion 8 is inactive, turn off ceiling lights 1, 2, 3."
+      },
+      "room": [
+        "living_room"
+      ]
+    },
+    {
+      "rule_id": "T2_R5",
+      "platform": "SmartThings",
+      "trigger": [
+        {
+          "uid": "fVwCUIs9Fe",
+          "attr": "contact",
+          "op": "==",
+          "val": "open"
+        }
+      ],
+      "condition": [
+        {
+          "uid": "GLOBAL",
+          "attr": "home_mode",
+          "op": "==",
+          "val": "away"
+        }
+      ],
+      "action": [
+        {
+          "uid": "f4z8w5MdfH",
+          "cmd": "camera.on"
+        }
+      ],
+      "metadata": {
+        "rule_ref_id": 5,
+        "text": "When the door contact 15 is open, if the home is in away mode, turn on camera 17."
+      },
+      "room": [
+        "living_room"
+      ]
+    },
+    {
+      "rule_id": "T2_R6",
+      "platform": "openHAB",
+      "trigger": [
+        {
+          "uid": "uJGVKjq0oy",
+          "attr": "motion",
+          "op": "==",
+          "val": "active"
+        }
+      ],
+      "condition": [
+        {
+          "uid": "GLOBAL",
+          "attr": "home_mode",
+          "op": "==",
+          "val": "home"
+        }
+      ],
+      "action": [
+        {
+          "uid": "n1fUh7cJNS",
+          "cmd": "camera.off"
+        }
+      ],
+      "metadata": {
+        "rule_ref_id": 6,
+        "text": "When motion 10 is detected in bedroom, if the home is in home mode, turn off camera 18."
+      },
+      "room": [
+        "bedroom"
+      ]
+    }
+  ]
+}

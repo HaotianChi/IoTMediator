@@ -1,0 +1,54 @@
+html(lang="en")
+  head
+    link(rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+    link(rel='stylesheet' href='/stylesheets/style.css')
+    title Integration of IoTMediator and IFTTT
+    meta(name="viewport" content="width=device-width, initial-scale=1") 
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+    script(src="/javascript/oauth.js")
+
+  body
+    .container-fluid
+      .row
+        .col-lg-3
+
+        .col-lg-6
+          h3 Allow IFTTT to access your IoTMediator devices?
+
+          if errorMessage
+            p.errorMessage #{errorMessage}
+
+          form(action="/ifttt/oauth2/login-as")
+            .form-group
+              label(for="email") Email:
+              input.form-control#email(type="email" name="email")
+            .form-group
+              label(for="password") Password:
+              input.form-control#password(type="password" name="password")
+            .form-group
+              label(for="expires_in") Access token expiration:
+              select.custom-select#expires_in(name="expires_in")
+                option(value="2538000") 30 Days
+                option(value="84600" selected) 24 Hours
+                option(value="3600") 1 Hour
+                option(value="300") 5 minutes
+                option(value="120") 2 minutes
+                option(value="60") 1 minute
+            .form-group#oauth-buttons
+              input.oauth.btn.btn-primary(type="submit" name="signin" value="Sign In & Authorize")
+              input.oauth.btn.btn-info(type="submit" name="cancel" value="Cancel")
+        .col-lg-3
+
+      .row
+        .col-lg-3
+
+        .col-lg-6
+          p
+            | This integration application allows your IFTTT account to access your devices connected to IoTMediator.
+            | IFTTT applets will use your devices.
+          p
+            | This application does not use your IFTTT credentials for login. You can create an account with
+            | any username and password. Passwords you enter here are encrypted with a salted hash before
+            | storage, so that they aren't readable by anyone.
+        .col-lg-3
+

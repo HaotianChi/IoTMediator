@@ -1,0 +1,941 @@
+{
+  "testbed": "T2",
+  "input": {
+    "rules_path": "/Users/htchi/Documents/4-SXU/科研工作/论文/IoTMediator-USENIX2023/mp-mediator-master/evaluation/testbed_T2_rules.json",
+    "devices_path": "/Users/htchi/Documents/4-SXU/科研工作/论文/IoTMediator-USENIX2023/mp-mediator-master/evaluation/testbed_T2_devices.json",
+    "rule_count": 6,
+    "device_count": 20
+  },
+  "candidate_stats": {
+    "CAI": 3,
+    "CMAI": 31,
+    "total": 34
+  },
+  "candidates": [
+    {
+      "candidate_id": "CAND_d0104994bfdb",
+      "kind": "CAI",
+      "pattern": "CAI-PotentialRaceCondition",
+      "r1": "T2_R3",
+      "r2": "T2_R4",
+      "static_evidence": {
+        "relation": "A1=¬A2",
+        "witness": {
+          "a1": {
+            "uid": "AS0D31nxF3",
+            "cmd": "light.on"
+          },
+          "a2": {
+            "uid": "AS0D31nxF3",
+            "cmd": "light.off"
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_8b1526384764",
+      "kind": "CAI",
+      "pattern": "CAI-InfiniteLoop",
+      "r1": "T2_R3",
+      "r2": "T2_R4",
+      "static_evidence": {
+        "relation": "A1↦T2 and A2↦T1",
+        "witness": {
+          "a1_to_t2": {
+            "action": {
+              "uid": "AS0D31nxF3",
+              "cmd": "light.on"
+            },
+            "trigger": {
+              "uid": "y7PW2aJQUz",
+              "attr": "luminance",
+              "op": ">",
+              "val": 30
+            },
+            "mode": "semantic",
+            "reason": "same-room env: increase(luminance) may satisfy luminance > 30"
+          },
+          "a2_to_t1": {
+            "action": {
+              "uid": "AS0D31nxF3",
+              "cmd": "light.off"
+            },
+            "trigger": {
+              "uid": "y7PW2aJQUz",
+              "attr": "luminance",
+              "op": "<",
+              "val": 10
+            },
+            "mode": "semantic",
+            "reason": "same-room env: decrease(luminance) may satisfy luminance < 10"
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_a3b0b85fa72d",
+      "kind": "CAI",
+      "pattern": "CAI-ConditionDisabling",
+      "r1": "T2_R2",
+      "r2": "T2_R1",
+      "static_evidence": {
+        "relation": "A1⇏C2",
+        "witness": {
+          "action": {
+            "uid": "G5zWV6wVY4",
+            "cmd": "light.on"
+          },
+          "condition": {
+            "uid": "RvCmNg3H0b",
+            "attr": "luminance",
+            "op": "<",
+            "val": 15
+          },
+          "mode": "semantic",
+          "reason": "same-room env: increase may violate condition"
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_23b291b08f06",
+      "kind": "CMAI",
+      "pattern": "CMAI-ConditionDisabling",
+      "r3": "T2_R5",
+      "mc": {
+        "uid": "GLOBAL",
+        "cmd": "mode.set",
+        "args": {
+          "mode": "home"
+        }
+      },
+      "static_evidence": {
+        "relation": "c⇏C3",
+        "witness": {
+          "action": {
+            "uid": "GLOBAL",
+            "cmd": "mode.set",
+            "args": {
+              "mode": "home"
+            }
+          },
+          "condition": {
+            "uid": "GLOBAL",
+            "attr": "home_mode",
+            "op": "==",
+            "val": "away"
+          },
+          "mode": "direct",
+          "reason": "direct equality violated"
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_731e9849d062",
+      "kind": "CMAI",
+      "pattern": "CMAI-ConditionEnabling",
+      "r3": "T2_R6",
+      "mc": {
+        "uid": "GLOBAL",
+        "cmd": "mode.set",
+        "args": {
+          "mode": "home"
+        }
+      },
+      "static_evidence": {
+        "relation": "c⇒C3",
+        "witness": {
+          "action": {
+            "uid": "GLOBAL",
+            "cmd": "mode.set",
+            "args": {
+              "mode": "home"
+            }
+          },
+          "condition": {
+            "uid": "GLOBAL",
+            "attr": "home_mode",
+            "op": "==",
+            "val": "home"
+          },
+          "mode": "direct",
+          "reason": "direct equality satisfied"
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_b3ea14c2f6de",
+      "kind": "CMAI",
+      "pattern": "CMAI-ConditionEnabling",
+      "r3": "T2_R5",
+      "mc": {
+        "uid": "GLOBAL",
+        "cmd": "mode.set",
+        "args": {
+          "mode": "away"
+        }
+      },
+      "static_evidence": {
+        "relation": "c⇒C3",
+        "witness": {
+          "action": {
+            "uid": "GLOBAL",
+            "cmd": "mode.set",
+            "args": {
+              "mode": "away"
+            }
+          },
+          "condition": {
+            "uid": "GLOBAL",
+            "attr": "home_mode",
+            "op": "==",
+            "val": "away"
+          },
+          "mode": "direct",
+          "reason": "direct equality satisfied"
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_f4f41b543937",
+      "kind": "CMAI",
+      "pattern": "CMAI-ConditionDisabling",
+      "r3": "T2_R6",
+      "mc": {
+        "uid": "GLOBAL",
+        "cmd": "mode.set",
+        "args": {
+          "mode": "away"
+        }
+      },
+      "static_evidence": {
+        "relation": "c⇏C3",
+        "witness": {
+          "action": {
+            "uid": "GLOBAL",
+            "cmd": "mode.set",
+            "args": {
+              "mode": "away"
+            }
+          },
+          "condition": {
+            "uid": "GLOBAL",
+            "attr": "home_mode",
+            "op": "==",
+            "val": "home"
+          },
+          "mode": "direct",
+          "reason": "direct equality violated"
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_fc0fcd7717a4",
+      "kind": "CMAI",
+      "pattern": "CMAI-ConditionDisabling",
+      "r3": "T2_R5",
+      "mc": {
+        "uid": "GLOBAL",
+        "cmd": "mode.set",
+        "args": {
+          "mode": "saving"
+        }
+      },
+      "static_evidence": {
+        "relation": "c⇏C3",
+        "witness": {
+          "action": {
+            "uid": "GLOBAL",
+            "cmd": "mode.set",
+            "args": {
+              "mode": "saving"
+            }
+          },
+          "condition": {
+            "uid": "GLOBAL",
+            "attr": "home_mode",
+            "op": "==",
+            "val": "away"
+          },
+          "mode": "direct",
+          "reason": "direct equality violated"
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_511112d4d877",
+      "kind": "CMAI",
+      "pattern": "CMAI-ConditionDisabling",
+      "r3": "T2_R6",
+      "mc": {
+        "uid": "GLOBAL",
+        "cmd": "mode.set",
+        "args": {
+          "mode": "saving"
+        }
+      },
+      "static_evidence": {
+        "relation": "c⇏C3",
+        "witness": {
+          "action": {
+            "uid": "GLOBAL",
+            "cmd": "mode.set",
+            "args": {
+              "mode": "saving"
+            }
+          },
+          "condition": {
+            "uid": "GLOBAL",
+            "attr": "home_mode",
+            "op": "==",
+            "val": "home"
+          },
+          "mode": "direct",
+          "reason": "direct equality violated"
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_c3b06f6c63d5",
+      "kind": "CMAI",
+      "pattern": "CMAI-ConditionDisabling",
+      "r3": "T2_R5",
+      "mc": {
+        "uid": "GLOBAL",
+        "cmd": "mode.set",
+        "args": {
+          "mode": "party"
+        }
+      },
+      "static_evidence": {
+        "relation": "c⇏C3",
+        "witness": {
+          "action": {
+            "uid": "GLOBAL",
+            "cmd": "mode.set",
+            "args": {
+              "mode": "party"
+            }
+          },
+          "condition": {
+            "uid": "GLOBAL",
+            "attr": "home_mode",
+            "op": "==",
+            "val": "away"
+          },
+          "mode": "direct",
+          "reason": "direct equality violated"
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_8eb4f922f1e6",
+      "kind": "CMAI",
+      "pattern": "CMAI-ConditionDisabling",
+      "r3": "T2_R6",
+      "mc": {
+        "uid": "GLOBAL",
+        "cmd": "mode.set",
+        "args": {
+          "mode": "party"
+        }
+      },
+      "static_evidence": {
+        "relation": "c⇏C3",
+        "witness": {
+          "action": {
+            "uid": "GLOBAL",
+            "cmd": "mode.set",
+            "args": {
+              "mode": "party"
+            }
+          },
+          "condition": {
+            "uid": "GLOBAL",
+            "attr": "home_mode",
+            "op": "==",
+            "val": "home"
+          },
+          "mode": "direct",
+          "reason": "direct equality violated"
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_6ccf4ff53fb2",
+      "kind": "CMAI",
+      "pattern": "CMAI-PotentialRaceCondition",
+      "r3": "T2_R4",
+      "mc": {
+        "uid": "AS0D31nxF3",
+        "cmd": "light.on"
+      },
+      "static_evidence": {
+        "relation": "c=¬A3",
+        "witness": {
+          "c": {
+            "uid": "AS0D31nxF3",
+            "cmd": "light.on"
+          },
+          "a3": {
+            "uid": "AS0D31nxF3",
+            "cmd": "light.off"
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_7a2d3325af05",
+      "kind": "CMAI",
+      "pattern": "CMAI-ChainedExecution",
+      "r3": "T2_R4",
+      "mc": {
+        "uid": "AS0D31nxF3",
+        "cmd": "light.on"
+      },
+      "static_evidence": {
+        "relation": "c↦T3",
+        "witness": {
+          "action": {
+            "uid": "AS0D31nxF3",
+            "cmd": "light.on"
+          },
+          "trigger": {
+            "uid": "y7PW2aJQUz",
+            "attr": "luminance",
+            "op": ">",
+            "val": 30
+          },
+          "mode": "semantic",
+          "reason": "same-room env: increase(luminance) may satisfy luminance > 30"
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_664bbd09c85b",
+      "kind": "CMAI",
+      "pattern": "CMAI-PotentialRaceCondition",
+      "r3": "T2_R3",
+      "mc": {
+        "uid": "AS0D31nxF3",
+        "cmd": "light.off"
+      },
+      "static_evidence": {
+        "relation": "c=¬A3",
+        "witness": {
+          "c": {
+            "uid": "AS0D31nxF3",
+            "cmd": "light.off"
+          },
+          "a3": {
+            "uid": "AS0D31nxF3",
+            "cmd": "light.on"
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_17e749d828f3",
+      "kind": "CMAI",
+      "pattern": "CMAI-ChainedExecution",
+      "r3": "T2_R3",
+      "mc": {
+        "uid": "AS0D31nxF3",
+        "cmd": "light.off"
+      },
+      "static_evidence": {
+        "relation": "c↦T3",
+        "witness": {
+          "action": {
+            "uid": "AS0D31nxF3",
+            "cmd": "light.off"
+          },
+          "trigger": {
+            "uid": "y7PW2aJQUz",
+            "attr": "luminance",
+            "op": "<",
+            "val": 10
+          },
+          "mode": "semantic",
+          "reason": "same-room env: decrease(luminance) may satisfy luminance < 10"
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_a9af5e95725f",
+      "kind": "CMAI",
+      "pattern": "CMAI-PotentialRaceCondition",
+      "r3": "T2_R4",
+      "mc": {
+        "uid": "swI5DYPiq8",
+        "cmd": "light.on"
+      },
+      "static_evidence": {
+        "relation": "c=¬A3",
+        "witness": {
+          "c": {
+            "uid": "swI5DYPiq8",
+            "cmd": "light.on"
+          },
+          "a3": {
+            "uid": "swI5DYPiq8",
+            "cmd": "light.off"
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_bb401ed7c0c9",
+      "kind": "CMAI",
+      "pattern": "CMAI-ChainedExecution",
+      "r3": "T2_R4",
+      "mc": {
+        "uid": "swI5DYPiq8",
+        "cmd": "light.on"
+      },
+      "static_evidence": {
+        "relation": "c↦T3",
+        "witness": {
+          "action": {
+            "uid": "swI5DYPiq8",
+            "cmd": "light.on"
+          },
+          "trigger": {
+            "uid": "y7PW2aJQUz",
+            "attr": "luminance",
+            "op": ">",
+            "val": 30
+          },
+          "mode": "semantic",
+          "reason": "same-room env: increase(luminance) may satisfy luminance > 30"
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_812c0690d28b",
+      "kind": "CMAI",
+      "pattern": "CMAI-PotentialRaceCondition",
+      "r3": "T2_R3",
+      "mc": {
+        "uid": "swI5DYPiq8",
+        "cmd": "light.off"
+      },
+      "static_evidence": {
+        "relation": "c=¬A3",
+        "witness": {
+          "c": {
+            "uid": "swI5DYPiq8",
+            "cmd": "light.off"
+          },
+          "a3": {
+            "uid": "swI5DYPiq8",
+            "cmd": "light.on"
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_9c01f4f600fc",
+      "kind": "CMAI",
+      "pattern": "CMAI-ChainedExecution",
+      "r3": "T2_R3",
+      "mc": {
+        "uid": "swI5DYPiq8",
+        "cmd": "light.off"
+      },
+      "static_evidence": {
+        "relation": "c↦T3",
+        "witness": {
+          "action": {
+            "uid": "swI5DYPiq8",
+            "cmd": "light.off"
+          },
+          "trigger": {
+            "uid": "y7PW2aJQUz",
+            "attr": "luminance",
+            "op": "<",
+            "val": 10
+          },
+          "mode": "semantic",
+          "reason": "same-room env: decrease(luminance) may satisfy luminance < 10"
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_94f10f7604bf",
+      "kind": "CMAI",
+      "pattern": "CMAI-PotentialRaceCondition",
+      "r3": "T2_R4",
+      "mc": {
+        "uid": "Zru1UH2dng",
+        "cmd": "light.on"
+      },
+      "static_evidence": {
+        "relation": "c=¬A3",
+        "witness": {
+          "c": {
+            "uid": "Zru1UH2dng",
+            "cmd": "light.on"
+          },
+          "a3": {
+            "uid": "Zru1UH2dng",
+            "cmd": "light.off"
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_4c5a72526915",
+      "kind": "CMAI",
+      "pattern": "CMAI-ChainedExecution",
+      "r3": "T2_R4",
+      "mc": {
+        "uid": "Zru1UH2dng",
+        "cmd": "light.on"
+      },
+      "static_evidence": {
+        "relation": "c↦T3",
+        "witness": {
+          "action": {
+            "uid": "Zru1UH2dng",
+            "cmd": "light.on"
+          },
+          "trigger": {
+            "uid": "y7PW2aJQUz",
+            "attr": "luminance",
+            "op": ">",
+            "val": 30
+          },
+          "mode": "semantic",
+          "reason": "same-room env: increase(luminance) may satisfy luminance > 30"
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_d315a4a6066e",
+      "kind": "CMAI",
+      "pattern": "CMAI-PotentialRaceCondition",
+      "r3": "T2_R3",
+      "mc": {
+        "uid": "Zru1UH2dng",
+        "cmd": "light.off"
+      },
+      "static_evidence": {
+        "relation": "c=¬A3",
+        "witness": {
+          "c": {
+            "uid": "Zru1UH2dng",
+            "cmd": "light.off"
+          },
+          "a3": {
+            "uid": "Zru1UH2dng",
+            "cmd": "light.on"
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_1086b6fb93d4",
+      "kind": "CMAI",
+      "pattern": "CMAI-ChainedExecution",
+      "r3": "T2_R3",
+      "mc": {
+        "uid": "Zru1UH2dng",
+        "cmd": "light.off"
+      },
+      "static_evidence": {
+        "relation": "c↦T3",
+        "witness": {
+          "action": {
+            "uid": "Zru1UH2dng",
+            "cmd": "light.off"
+          },
+          "trigger": {
+            "uid": "y7PW2aJQUz",
+            "attr": "luminance",
+            "op": "<",
+            "val": 10
+          },
+          "mode": "semantic",
+          "reason": "same-room env: decrease(luminance) may satisfy luminance < 10"
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_84ab82b466fa",
+      "kind": "CMAI",
+      "pattern": "CMAI-ChainedExecution",
+      "r3": "T2_R4",
+      "mc": {
+        "uid": "opcjzLLOXn",
+        "cmd": "light.on"
+      },
+      "static_evidence": {
+        "relation": "c↦T3",
+        "witness": {
+          "action": {
+            "uid": "opcjzLLOXn",
+            "cmd": "light.on"
+          },
+          "trigger": {
+            "uid": "y7PW2aJQUz",
+            "attr": "luminance",
+            "op": ">",
+            "val": 30
+          },
+          "mode": "semantic",
+          "reason": "same-room env: increase(luminance) may satisfy luminance > 30"
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_43d52465e021",
+      "kind": "CMAI",
+      "pattern": "CMAI-ChainedExecution",
+      "r3": "T2_R3",
+      "mc": {
+        "uid": "opcjzLLOXn",
+        "cmd": "light.off"
+      },
+      "static_evidence": {
+        "relation": "c↦T3",
+        "witness": {
+          "action": {
+            "uid": "opcjzLLOXn",
+            "cmd": "light.off"
+          },
+          "trigger": {
+            "uid": "y7PW2aJQUz",
+            "attr": "luminance",
+            "op": "<",
+            "val": 10
+          },
+          "mode": "semantic",
+          "reason": "same-room env: decrease(luminance) may satisfy luminance < 10"
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_b6b29f82aea6",
+      "kind": "CMAI",
+      "pattern": "CMAI-ConditionDisabling",
+      "r3": "T2_R1",
+      "mc": {
+        "uid": "G5zWV6wVY4",
+        "cmd": "light.on"
+      },
+      "static_evidence": {
+        "relation": "c⇏C3",
+        "witness": {
+          "action": {
+            "uid": "G5zWV6wVY4",
+            "cmd": "light.on"
+          },
+          "condition": {
+            "uid": "RvCmNg3H0b",
+            "attr": "luminance",
+            "op": "<",
+            "val": 15
+          },
+          "mode": "semantic",
+          "reason": "same-room env: increase may violate condition"
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_dbaa22cad8c1",
+      "kind": "CMAI",
+      "pattern": "CMAI-PotentialRaceCondition",
+      "r3": "T2_R1",
+      "mc": {
+        "uid": "G5zWV6wVY4",
+        "cmd": "light.off"
+      },
+      "static_evidence": {
+        "relation": "c=¬A3",
+        "witness": {
+          "c": {
+            "uid": "G5zWV6wVY4",
+            "cmd": "light.off"
+          },
+          "a3": {
+            "uid": "G5zWV6wVY4",
+            "cmd": "light.on"
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_628fea355131",
+      "kind": "CMAI",
+      "pattern": "CMAI-ConditionEnabling",
+      "r3": "T2_R1",
+      "mc": {
+        "uid": "G5zWV6wVY4",
+        "cmd": "light.off"
+      },
+      "static_evidence": {
+        "relation": "c⇒C3",
+        "witness": {
+          "action": {
+            "uid": "G5zWV6wVY4",
+            "cmd": "light.off"
+          },
+          "condition": {
+            "uid": "RvCmNg3H0b",
+            "attr": "luminance",
+            "op": "<",
+            "val": 15
+          },
+          "mode": "semantic",
+          "reason": "same-room env: decrease may make condition hold"
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_ffe3ca82c442",
+      "kind": "CMAI",
+      "pattern": "CMAI-PotentialRaceCondition",
+      "r3": "T2_R2",
+      "mc": {
+        "uid": "G5zWV6wVY4",
+        "cmd": "light.off"
+      },
+      "static_evidence": {
+        "relation": "c=¬A3",
+        "witness": {
+          "c": {
+            "uid": "G5zWV6wVY4",
+            "cmd": "light.off"
+          },
+          "a3": {
+            "uid": "G5zWV6wVY4",
+            "cmd": "light.on"
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_0251071c3599",
+      "kind": "CMAI",
+      "pattern": "CMAI-ConditionDisabling",
+      "r3": "T2_R1",
+      "mc": {
+        "uid": "BVAjC1i2pD",
+        "cmd": "light.on"
+      },
+      "static_evidence": {
+        "relation": "c⇏C3",
+        "witness": {
+          "action": {
+            "uid": "BVAjC1i2pD",
+            "cmd": "light.on"
+          },
+          "condition": {
+            "uid": "RvCmNg3H0b",
+            "attr": "luminance",
+            "op": "<",
+            "val": 15
+          },
+          "mode": "semantic",
+          "reason": "same-room env: increase may violate condition"
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_6df9baf6cda9",
+      "kind": "CMAI",
+      "pattern": "CMAI-PotentialRaceCondition",
+      "r3": "T2_R1",
+      "mc": {
+        "uid": "BVAjC1i2pD",
+        "cmd": "light.off"
+      },
+      "static_evidence": {
+        "relation": "c=¬A3",
+        "witness": {
+          "c": {
+            "uid": "BVAjC1i2pD",
+            "cmd": "light.off"
+          },
+          "a3": {
+            "uid": "BVAjC1i2pD",
+            "cmd": "light.on"
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_634af9483793",
+      "kind": "CMAI",
+      "pattern": "CMAI-ConditionEnabling",
+      "r3": "T2_R1",
+      "mc": {
+        "uid": "BVAjC1i2pD",
+        "cmd": "light.off"
+      },
+      "static_evidence": {
+        "relation": "c⇒C3",
+        "witness": {
+          "action": {
+            "uid": "BVAjC1i2pD",
+            "cmd": "light.off"
+          },
+          "condition": {
+            "uid": "RvCmNg3H0b",
+            "attr": "luminance",
+            "op": "<",
+            "val": 15
+          },
+          "mode": "semantic",
+          "reason": "same-room env: decrease may make condition hold"
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_5e0eaf663c6e",
+      "kind": "CMAI",
+      "pattern": "CMAI-PotentialRaceCondition",
+      "r3": "T2_R5",
+      "mc": {
+        "uid": "f4z8w5MdfH",
+        "cmd": "camera.off"
+      },
+      "static_evidence": {
+        "relation": "c=¬A3",
+        "witness": {
+          "c": {
+            "uid": "f4z8w5MdfH",
+            "cmd": "camera.off"
+          },
+          "a3": {
+            "uid": "f4z8w5MdfH",
+            "cmd": "camera.on"
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "CAND_652d73be8772",
+      "kind": "CMAI",
+      "pattern": "CMAI-PotentialRaceCondition",
+      "r3": "T2_R6",
+      "mc": {
+        "uid": "n1fUh7cJNS",
+        "cmd": "camera.on"
+      },
+      "static_evidence": {
+        "relation": "c=¬A3",
+        "witness": {
+          "c": {
+            "uid": "n1fUh7cJNS",
+            "cmd": "camera.on"
+          },
+          "a3": {
+            "uid": "n1fUh7cJNS",
+            "cmd": "camera.off"
+          }
+        }
+      }
+    }
+  ]
+}
