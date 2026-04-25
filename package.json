@@ -43,5 +43,10 @@
     "string-format": "^2.0.0",
     "underscore": "^1.9.2",
     "uuid": "^8.2.0"
+  },
+  "overrides": {
+    "jshint": {
+      "esprima": "4.0.1"
+    }
   }
 }
