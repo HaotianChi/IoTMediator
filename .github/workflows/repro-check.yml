@@ -7,7 +7,7 @@ on:
   pull_request:
 
 jobs:
-  replay-evaluation:
+  evaluation:
     runs-on: ubuntu-latest
     env:
       IOTMEDIATOR_REAL_INTEGRATION: "false"
